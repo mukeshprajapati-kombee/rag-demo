@@ -1,0 +1,57 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.env
+.env
+.venv
+venv/
+env/
+*.egg-info/
+*.egg
+.qodo
+.history
+# Chroma DB and embeddings
+chroma_db/
+vector_db/*.db
+vector_db/*.sqlite3
+
+# Logs and outputs
+logs/
+*.log
+
+# Data and cache
+*.cache/
+.cache/
+*.tmp
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# VSCode/IDE
+.vscode/
+.idea/
+
+# Node/Frontend (if you add a frontend)
+frontend/node_modules/
+frontend/.next/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
+frontend/build/
+frontend/dist/
+
+# Service account keys and secrets
+*.json
+!ration-sathi-chunks.json
+!signature-club-chunks
+.json
+
+# Remove sensitive files
+!*.md
+chunks
