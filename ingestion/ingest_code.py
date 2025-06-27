@@ -185,6 +185,11 @@ def main():
             project_root = project['project_root']
             project_name = project['project_name']
             output_path = project.get('output', f"data/{project_name}-chunks.json")
+            # Create output directory if it doesn't exist
+            output_dir = os.path.dirname(output_path)
+            if output_dir and not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+                print(f"Created directory: {output_dir}")
             print(f"Ingesting project: {project_name} at {project_root}")
             chunks = chunk_files(project_root, project_name, chunk_config)
             with open(output_path, 'w', encoding='utf-8') as f:
@@ -197,6 +202,11 @@ def main():
             sys.exit(1)
         chunks = chunk_files(args.project_root, args.project_name, chunk_config)
         if args.output:
+            # Create output directory if it doesn't exist
+            output_dir = os.path.dirname(args.output)
+            if output_dir and not os.path.exists(output_dir):
+                os.makedirs(output_dir)
+                print(f"Created directory: {output_dir}")
             with open(args.output, 'w', encoding='utf-8') as f:
                 json.dump(chunks, f, ensure_ascii=False, indent=2)
             print(f"Wrote {len(chunks)} chunks to {args.output}")
