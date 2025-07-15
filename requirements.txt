@@ -1,6 +1,7 @@
-chromadb
 langchain
+langchain-huggingface
 langchain-google-genai
 sentence-transformers
-openai
-tiktoken 
+tiktoken
+python-dotenv
+qdrant-client 
